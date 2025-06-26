@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hs.study.boardMybatisProject.Dao.BoardDao">
+
+    <insert id="insertBoard" parameterType="kr.hs.study.boardMybatisProject.Dto.BoardDto">
+        insert into board(id, boardWriter, boardPass, boardTitle, boardContents) values(board_seq.nextval, #{boardWriter}, #{boardPass}, #{boardTitle}, #{boardContents})
+    </insert>
+
+    <select id="selectAll">
+        select * from board
+    </select>
+
+    <update id="countHits" parameterType="int">
+        update board set boardHits = boardHits + 1 where id = #{id}
+    </update>
+</mapper>

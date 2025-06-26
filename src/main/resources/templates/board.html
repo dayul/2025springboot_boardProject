@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board</title>
+</head>
+<body>
+    <h1 th:text="'Board'"></h1>
+
+    <form action="/write_done" method="post">
+        <input placeholder="작성자" name="boardWriter"/>
+        <input placeholder="비밀번호" name="boardPass" type="password"/>
+        <input placeholder="제목" name="boardTitle" />
+        <textarea placeholder="내용을 입력해주세요" name="boardContents"></textarea>
+        <button type="submit">작성</button>
+    </form>
+</body>
+</html>
