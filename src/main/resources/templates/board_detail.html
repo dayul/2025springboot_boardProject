@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Board Detail</title>
+</head>
+<body>
+<h1 th:text="'Board Detail'"></h1>
+
+<table border="1">
+  <tr>
+    <th th:text="id"></th>
+    <td th:text="${one.id}"></td>
+  </tr>
+  <tr>
+    <th th:text="writer"></th>
+    <td th:text="${one.boardWriter}"></td>
+  </tr>
+  <tr>
+    <th th:text="date"></th>
+    <td th:text="${one.boardCreatedTime}"></td>
+  </tr>
+  <tr>
+    <th th:text="hits"></th>
+    <td th:text="${one.boardHits}"></td>
+  </tr>
+  <tr>
+    <th th:text="title"></th>
+    <td th:text="${one.boardTitle}"></td>
+
+  </tr>
+  <tr>
+    <th th:text="contents"></th>
+    <td th:text="${one.boardContents}"></td>
+  </tr>
+</table>
+
+<button onclick="ListFn()">목록</button>
+<button onclick="updateFn()">수정</button>
+<button onclick="deleteFn()">삭제</button>
+
+<!--action 수정하기-->
+<form action="/comment" method="post">
+  <input type="text" placeholder="작성자">
+  <input type="text" placeholder="내용">
+  <button type="submit">댓글 작성</button>
+</form>
+
+<script>
+  const ListFn = () => {
+      location.href="/board/save";
+  }
+
+  const updateFn = () => {
+    const id = [[${one.id}]];
+    location.href =  "/edit/" + id;
+  }
+
+  const deleteFn = () => {
+    const id = [[${one.id}]];
+    location.href = '/delete/' + id;
+  }
+</script>
+</body>
+</html>

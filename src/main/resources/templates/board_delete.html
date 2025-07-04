@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board delete</title>
+</head>
+<body>
+
+  <h1 th:text="'Board Delete'"></h1>
+
+  <form method="post" action="/delete">
+    <input type="hidden" th:value="${one.id}" name="id"/>
+    <input type="text" name="password" placeholder="비밀번호 입력"/>
+    <button type="submit">삭제</button>
+  </form>
+</body>
+</html>

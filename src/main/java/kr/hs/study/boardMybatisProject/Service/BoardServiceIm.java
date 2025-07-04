@@ -18,8 +18,18 @@ public class BoardServiceIm implements BoardService{
     }
 
     @Override
+    public void updateBoard(BoardDto boardDto) {
+        this.boardDao.updateBoard(boardDto);
+    }
+
+    @Override
     public void countHits(int id) {
         this.boardDao.countHits(id);
+    }
+
+    @Override
+    public void deletePost(int id) {
+        this.boardDao.deletePost(id);
     }
 
     @Override

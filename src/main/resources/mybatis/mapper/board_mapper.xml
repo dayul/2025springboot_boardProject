@@ -10,7 +10,19 @@
         select * from board
     </select>
 
+    <select id="selectOne" parameterType="int">
+        select * from board where id = #{id}
+    </select>
+
     <update id="countHits" parameterType="int">
         update board set boardHits = boardHits + 1 where id = #{id}
     </update>
+
+    <update id="updateBoard" parameterType="kr.hs.study.boardMybatisProject.Dto.BoardDto">
+        update board set boardWriter = ${boardWriter}, boardTitle = ${boardTitle}, boardContents = ${boardContents} where id = #{id}
+    </update>
+
+    <delete id="deletePost">
+        delete from board where id = #{id}
+    </delete>
 </mapper>
