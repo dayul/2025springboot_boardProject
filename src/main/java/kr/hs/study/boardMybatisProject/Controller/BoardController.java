@@ -1,9 +1,10 @@
 package kr.hs.study.boardMybatisProject.Controller;
 
-import kr.hs.study.boardMybatisProject.Dao.BoardDeleteDto;
+import kr.hs.study.boardMybatisProject.Dto.BoardDeleteDto;
 import kr.hs.study.boardMybatisProject.Dto.BoardDto;
+import kr.hs.study.boardMybatisProject.Dto.CommentDto;
 import kr.hs.study.boardMybatisProject.Service.BoardService;
-import lombok.Getter;
+import kr.hs.study.boardMybatisProject.Service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,9 @@ public class BoardController {
 
     @Autowired
     BoardService boardService;
+
+    @Autowired
+    CommentService commentService;
 
     @GetMapping("/board")
     public String writeBoard() {

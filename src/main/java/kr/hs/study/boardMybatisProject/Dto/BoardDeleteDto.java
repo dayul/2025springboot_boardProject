@@ -1,4 +1,4 @@
-package kr.hs.study.boardMybatisProject.Dao;
+package kr.hs.study.boardMybatisProject.Dto;
 
 import lombok.Data;
 
